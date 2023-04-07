@@ -31,7 +31,7 @@ If you rather use a self installed MKL follow these instructions:
   information.
 * Note that the `MKLROOT` environment variable must be set whenever using the library.
 
-### PARDISO 6.0
+### PARDISO 6.0/7.2/8.0
 
 * Put the PARDISO library `libpardiso600-WIN-X86-64.dll`, `libpardiso600-GNUXXX-X86-64.so` or 
   `libpardiso600-MACOS-X86-64.dylib` in a folder somewhere and set the environment variable `JULIA_PARDISO` to that folder.
