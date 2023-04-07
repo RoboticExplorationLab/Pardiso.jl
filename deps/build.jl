@@ -11,15 +11,19 @@ const LIBPARDISONAMES =
 if Sys.iswindows()
 [
     "libpardiso600-WIN-X86-64.dll",
+    "libpardiso720-WIN-X86-64.dll",
 ]
 elseif Sys.isapple()
 [
     "libpardiso600-MACOS-X86-64.dylib",
+    "libpardiso720-MACOS-X86-64.dylib",
 ]
 elseif Sys.islinux()
 [
     "libpardiso600-GNU800-X86-64.so",
     "libpardiso600-GNU720-X86-64.so",
+    "libpardiso720-GNU831-X86-64.so",
+    "libpardiso800-GNU831-X86-64-March18-2023.so",
 ]
 else
     error("unhandled OS")
