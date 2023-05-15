@@ -80,7 +80,8 @@ end
     N = Int32(N)
     colptr = convert(Vector{Int32}, colptr)
     rowval = convert(Vector{Int32}, rowval)
-    resize!(ps.perm, size(B, 1))
+    resize!(ps.perm, N)
+    
     NRHS = Int32(NRHS)
 
     ERR = Ref{Int32}(0)

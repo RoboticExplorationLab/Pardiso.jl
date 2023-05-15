@@ -319,9 +319,9 @@ end
 
 function pardiso(ps::AbstractPardisoSolver, X::StridedVecOrMat{Tv}, A::SparseMatrixCSC{Tv,Ti},
                  B::StridedVecOrMat{Tv}) where {Ti, Tv <: PardisoNumTypes}
-    if length(X) != 0
-        dim_check(X, A, B)
-    end
+    # if length(X) != 0
+    #     dim_check(X, A, B)
+    # end
 
     if Tv <: Complex && isreal(get_matrixtype(ps))
         throw(ErrorException(string("input matrix is complex while PardisoSolver ",
@@ -334,12 +334,7 @@ function pardiso(ps::AbstractPardisoSolver, X::StridedVecOrMat{Tv}, A::SparseMat
     end
 
     N = size(A, 2)
-
-    AA = A.nzval
-    IA = convert(Vector{Int32}, A.colptr)
-    JA = convert(Vector{Int32}, A.rowval)
-
-    resize!(ps.perm, size(B, 1))
+    resize!(ps.perm, N)
 
     NRHS = size(B, 2)
 
